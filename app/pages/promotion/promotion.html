@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar primary>
+        <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Aliexpress Promotions</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="promotion">
+    <ion-searchbar (ionInput)="searchPromotions($event)" placeholder="Pesquisar" debounce="800"></ion-searchbar>
+
+    <ion-card *ngFor="let produto of produtos">
+        <img src="{{produto.imageUrl}}" />
+        <ion-card-content>
+            <ion-card-title>
+                <s>{{produto.salePrice}}</s> {{produto.originalPrice}}
+            </ion-card-title>
+            <p>
+                {{produto.productTitle}}
+            </p>
+        </ion-card-content>
+
+    </ion-card>
+
+    <ion-infinite-scroll (ionInfinite)="buscarMaisProdutos($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+
+
+</ion-content>
