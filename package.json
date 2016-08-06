@@ -35,12 +35,10 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-crosswalk-webview"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "locator": "windows"
-    }
+    "android"
   ]
 }
